@@ -1,13 +1,13 @@
 I) Resources, methods, and OpenAPI definition files:
 
 -/reviews:
-	+ GET - Get a list of reviews
-	+ POST - Add a new review to the list
+	+ GET (Get a list of reviews)
+	+ POST (Add a new review to the list)
 	
 -/reviews{reviewid}:
-	+ GET - Get a review
-	+ PUT - Update an existing review
-	+ DELETE - Delete a review
+	+ GET (Get a review)
+	+ PUT (Update an existing review)
+	+ DELETE (Delete a review)
   
  Check 'yaml' folder for OpenAPI definition files.
   
