@@ -1,0 +1,131 @@
+swagger: '2.0'
+
+info:
+  title: Reviews API
+  version: 1.0.0
+
+basePath: /reviewsapi/v1.0
+
+consumes:
+  - application/json
+
+produces:
+  - application/json
+
+paths:
+  /reviews:
+    get:
+      description: Retrieves a list of reviews in the system
+      responses:
+        '200':
+          description: Review list
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/Review"
+          examples:
+            application/json: [  {    "id": "R003",    "title": "Spring Boot Reading",    "createdDate": "02/01/2016",    "summary": "Read more about Spring Boot"  },  {    "id": "R001",    "title": "Get to know Spring Boot",    "createdDate": "01/01/2016",    "summary": "Today I will learn Spring Boot"  }]
+    post:
+      description: Adds a new review to the list
+      parameters:
+        - description: A new review
+          in: body
+          name: review
+          required: true
+          schema:
+              $ref: "#/definitions/Review"
+      responses:
+        '201':
+          description: Review created
+          schema:
+            $ref: "#/definitions/Review"
+          examples:
+            application/json: {    "id": "R002",    "title": "Simple Spring Boot Project",    "createdDate": "01/02/2016",    "summary": "I will do my first Spring Boot Project" }
+        '409':
+          description: Duplicate review ID found
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+          examples:
+            application/json: { message: Duplicate reivew ID found }
+  /reviews/{reviewid}:
+    get:
+      description: Retrieves an individual review
+      parameters:
+        - description: ID for the review
+          in: path
+          name: reviewid
+          required: true
+          type: string
+      responses:
+        '200':
+          description: A review
+          examples:
+            application/json:  {    "id": "R002",    "title": "Simple Spring Boot Project",    "createdDate": "01/02/2016",    "summary": "I will do my first Spring Boot Project" }
+          schema:
+            $ref: "#/definitions/Review"
+        '404':
+          description: Review not found
+          examples:
+            application/json: { message: No review with that ID found }
+            schema:
+              type: object
+              properties:
+                message:
+                  type: string
+    put:
+      description: Review update
+      parameters:
+        - description: ID for the review
+          in: path
+          name: reviewid
+          required: true
+          type: string
+        - description: The review
+          in: body
+          name: review
+          required: true
+          schema:
+              $ref: "#/definitions/Review"
+      responses:
+        '204':
+          description: Review updated
+        '404':
+          description: Review not found
+          examples:
+            application/json:
+              message: No review with that ID found
+            schema:
+              type: string
+    delete:
+      description: Deletes an individual review
+      parameters:
+        - description: ID for the review
+          in: path
+          name: reviewid
+          required: true
+          type: string
+      responses:
+        '204':
+          description: Review deleted
+        '404':
+          description: Review not found
+          examples:
+            application/json:
+              message: No review with that ID found
+            schema:
+              type: string
+definitions:
+  Review:
+    type: object
+    properties:
+      id:
+        type: string
+      title:
+        type: string
+      createdDate:
+        type: string
+      summary:
+        type: string
