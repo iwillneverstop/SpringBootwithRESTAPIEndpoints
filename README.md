@@ -1,10 +1,10 @@
 I) Resources, methods, and OpenAPI definition files:
 
--/reviews
+-/reviews:
 	+ GET - Get a list of reviews
 	+ POST - Add a new review to the list
 	
--/reviews{reviewid}
+-/reviews{reviewid}:
 	+ GET - Get a review
 	+ PUT - Update an existing review
 	+ DELETE - Delete a review
