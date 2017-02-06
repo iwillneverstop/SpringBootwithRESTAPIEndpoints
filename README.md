@@ -13,7 +13,7 @@ I) Resources, methods, and OpenAPI definition files:
   
 II) Spring Boot project
 
-Check 'spring-boot-review'
+Check 'spring-boot-review' folder
 
 III) Generating a client
 
