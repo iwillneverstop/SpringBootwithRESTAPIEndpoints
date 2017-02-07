@@ -1,15 +1,15 @@
 I) Resources, methods, and OpenAPI definition files:
 
 - /reviews:
-	(1) GET (Get a list of reviews)
-	(2) POST (Add a new review to the list)
+ - GET (Get a list of reviews)
+ - POST (Add a new review to the list)
 	
 - /reviews{reviewid}:
-	(1) GET (Get a review)
-	(2) PUT (Update an existing review)
-	(3) DELETE (Delete a review)
+ - GET (Get a review)
+ - PUT (Update an existing review)
+ - DELETE (Delete a review)
   
- - Check 'yaml' folder for OpenAPI definition files.
+- Check 'yaml' folder for OpenAPI definition files.
   
 II) Spring Boot project
 
