@@ -21,3 +21,5 @@ III) Generating a client
 - Run 'java -jar swagger-codegen-cli-2.2.1.jar generate -i ReviewsAPIWithCommonDataDefinitions.yaml -l java -o java-client' with 'ReviewsAPIWithCommonDataDefinitions.yaml' file is in 'yaml' folder and java-client is the name for the generated client.
 
 - Check 'java-client' folder for a pre-generated java-client. Within this java-client, check DefaultApiTest.java for how to use this client.
+
+(Edited)
