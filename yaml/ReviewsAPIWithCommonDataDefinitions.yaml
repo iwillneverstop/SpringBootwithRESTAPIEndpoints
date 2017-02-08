@@ -2,7 +2,7 @@ swagger: '2.0'
 
 info:
   title: Reviews API
-  version: 1.0.0
+  version: 1.0.1
 
 basePath: /reviewsapi/v1.0
 
